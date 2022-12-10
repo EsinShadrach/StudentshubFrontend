@@ -1,0 +1,836 @@
+<!-- !check bottom for Nav offcanvas -->
+<!-- !for tablets when you click profile it should pop out a modal -->
+<!-- !the nav and offcanvas for home(courses) and probably other pages are different from about, contact, and index -->
+<!-- ! use this svg for home
+! <svg viewBox="0 0 28 28" class="x1lliihq x1k90msu x2h7rmj x1qfuztq x5e5rjt" fill="currentColor" height="28" width="28"><path d="M25.825 12.29C25.824 12.289 25.823 12.288 25.821 12.286L15.027 2.937C14.752 2.675 14.392 2.527 13.989 2.521 13.608 2.527 13.248 2.675 13.001 2.912L2.175 12.29C1.756 12.658 1.629 13.245 1.868 13.759 2.079 14.215 2.567 14.479 3.069 14.479L5 14.479 5 23.729C5 24.695 5.784 25.479 6.75 25.479L11 25.479C11.552 25.479 12 25.031 12 24.479L12 18.309C12 18.126 12.148 17.979 12.33 17.979L15.67 17.979C15.852 17.979 16 18.126 16 18.309L16 24.479C16 25.031 16.448 25.479 17 25.479L21.25 25.479C22.217 25.479 23 24.695 23 23.729L23 14.479 24.931 14.479C25.433 14.479 25.921 14.215 26.132 13.759 26.371 13.245 26.244 12.658 25.825 12.29"></path></svg>
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>StudentsHub | Home</title>
+		<link rel="stylesheet" href="./css/bootstrap.css" />
+		<link
+			rel="stylesheet"
+			href="./assets/bootstrap-icons/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link
+			rel="shortcut icon"
+			href="./assets/favicon.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="./css/aos.css" />
+		<script defer src="./js/bootstrap.bundle.js"></script>
+		<script defer src="./js/functionality.js"></script>
+		<script src="./js/aos.js"></script>
+	</head>
+	<body class="">
+		<div class="identifier visually-hidden">home</div>
+		<!-- *display this header if user is authenicated {for mobile but display regardless}-->
+		<!-- *{% if user.is_authenticated %} -->
+		<header class="bg-light px-3 mobile-header py-2">
+			<a href=".">
+				<img
+					src="./assets/shublogo-edited.png"
+					draggable="false"
+					class="mobile-header-img"
+					alt=""
+				/>
+			</a>
+			<div class="mobile-profile dropdown">
+				<img
+					draggable="false"
+					src="./images/tobi.jpeg"
+					alt=""
+					class="profile-img"
+					type="button"
+					id="account-actions"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+				/>
+				<div class="dropdown-menu" aria-labelledby="account-actions">
+					<a class="dropdown-item" href="#">View Profile</a>
+					<a class="dropdown-item" href="#">Edit Profile</a>
+				</div>
+			</div>
+		</header>
+		<!-- !Not authenticated -->
+		<!-- !{% else %} -->
+		<!-- !<header class="bg-light text-center mobile-header tab-header-auth px-3 py-3">
+			<img src="./assets/shublogo-edited.png" draggable="false" class="mobile-header-img-no-auth" alt="">
+			<form class="d-flex">
+				<button class="btn btn-info my-2 my-sm-0" type="submit">
+					Login
+				</button>
+				<button class="btn btn-outline-info my-2 mx-2 my-sm-0" type="submit">
+					Sign-up
+				</button>
+			</form>
+		</header> -->
+		<!-- !{% endif %} -->
+		<nav>
+			<div class="nav-mobile">
+				<div
+					class="nav-mobile-cont shadow-lg mb-3 px-3 py-1 rounded-4 text-center"
+				>
+					<div
+						class="nav-mobile-events"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					>
+						<i class="bi-grid-fill gen-svg-mobile"></i>
+					</div>
+					<a
+						href="."
+						class="nav-mobile-events nav-mobile-events-center border-start border-3 border-end"
+					>
+						<i class="bi-house-fill gen-svg-mobile mx-2"></i>
+					</a>
+					<a
+						href="./home.html"
+						class="nav-mobile-events mobile-need-fix"
+						aria-labelledby="name"
+					>
+						<svg
+							style="width: 24px; height: 24px"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill="currentColor"
+								d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+							/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</nav>
+		<header class="bg-light border">
+			<nav
+				class="desktop navbar navbar-expand-md navbar-light bg-light"
+				data-aos="fade-down"
+			>
+				<div class="container-lg py-2">
+					<a class="navbar-brand" href=".">
+						<img
+							draggable="false"
+							src="./assets/shublogo-edited.png"
+							alt=""
+							class="shub-nav-logo"
+						/>
+					</a>
+					<button
+						class="navbar-toggler d-lg-none"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					>
+						<span class="bi-text-right"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavId">
+						<ul class="navbar-nav me-auto mt-2 ms-5 mt-lg-0">
+							<button
+								class="btn border-none nav-item mx-3 more-toggle-cont"
+							>
+								<span
+									class="lorem is-responsive dropdown-toggle more-toggle"
+									href=""
+									aria-current="page"
+								>
+									Categories
+								</span>
+							</button>
+							<form action="" method="post">
+								<div class="search-container">
+									<input
+										type="text"
+										class="form-control search"
+										name=""
+										aria-describedby="Search courses"
+										placeholder="Search courses"
+									/>
+									<button
+										class="w-25 btn rounded-end bg-shub-blue search-btn"
+										type="submit"
+									>
+										<i class="bi-search has-text-dark"></i>
+									</button>
+								</div>
+							</form>
+							<div class="icons-home ms-5">
+								<li class="nav-item">
+									<!-- i assumed this hear redirects to somewhere??? -->
+									<div
+										class="cart cart-hover bi-bell notifs text-shubpurple-i text-center"
+										type="button"
+										style="font-size: large"
+										data-bs-toggle="modal"
+										data-bs-target="#notification_modal"
+									></div>
+								</li>
+								<li class="nav-item mx-3 dropdown">
+									<div
+										class="nav-link is-responsive active dropdown-toggle"
+										type="button"
+										id="navigation"
+										data-bs-toggle="dropdown"
+										aria-haspopup="true"
+										aria-expanded="false"
+									>
+										Dictionary
+									</div>
+									<div
+										class="dropdown-menu shadow-lg"
+										aria-labelledby="account-actions"
+									>
+										<a
+											class="dropdown-item"
+											href="./home.html"
+											>Courses</a
+										>
+										<a
+											class="dropdown-item"
+											href="events.html"
+											>Events</a
+										>
+										<a
+											class="dropdown-item"
+											href="dashboard.html"
+											>Dashboard</a
+										>
+										<a
+											class="dropdown-item"
+											href="resources.html"
+											>Resources</a
+										>
+										<div class="dropdown-divider"></div>
+										<a
+											href="todo.html"
+											class="dropdown-item"
+											>todo</a
+										>
+										<a
+											href="books.html"
+											class="dropdown-item"
+											>Books</a
+										>
+										<a
+											href="wikipedia.html"
+											class="dropdown-item"
+											>Wikipedia</a
+										>
+									</div>
+								</li>
+							</div>
+						</ul>
+						<!-- !{% if user.is_authenticated %} -->
+						<div class="dropdown">
+							<div
+								class="user-profile user-profile-lg p-2 rounded-5"
+								type="button"
+								id="account-actions"
+								data-bs-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								<img
+									draggable="false"
+									src="./images/tobi.jpeg"
+									alt=""
+									class="profile-img"
+									data-bs-toggle="tooltip"
+									data-bs-placement="left"
+									data-bs-title="Tobi Edunkayo"
+								/>
+							</div>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="navigation"
+							>
+								<a class="dropdown-item" href="#"
+									>View Profile</a
+								>
+								<a class="dropdown-item" href="#"
+									>Edit Profile</a
+								>
+								<div class="dropdown-divider"></div>
+								<a
+									href="#"
+									class="d-flex justify-content-center gap-2 dropdown-item"
+								>
+									<i
+										class="bi-door-open-fill text-danger"
+									></i>
+									<div class="text-danger text-center">
+										Logout
+									</div>
+								</a>
+							</div>
+						</div>
+						<!-- !else -->
+						<!-- <form class="d-flex my-2 my-lg-0">
+							<button class="is-responsive btn btn-info my-2 mx-2 my-sm-0" type="submit">Login</button>
+							<button class="is-responsive btn btn-outline-info my-2 mx-2 my-sm-0" type="submit">Sign-up</button>
+						</form> -->
+						<!-- !endif -->
+					</div>
+				</div>
+			</nav>
+			<div
+				class="modal fade"
+				id="notification_modal"
+				tabindex="-1"
+				data-bs-backdrop="static"
+				data-bs-keyboard="false"
+				role="dialog"
+				aria-labelledby="modalTitleId"
+				aria-hidden="true"
+			>
+				<div
+					class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+					role="document"
+				>
+					<div class="modal-content">
+						<div class="modal-header bg-shub-purple text-light">
+							<h5 class="modal-title" id="modalTitleId">
+								Notifications
+							</h5>
+							<button
+								type="button"
+								class="btn-close notification-btn-close btn-close-white"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="modal-body">
+							<div class="container-fluid">
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+								<div
+									class="p-2 text-center notif_items border-bottom"
+									style="font-weight: bold"
+								>
+									<a href="#">
+										hey, here's a notification!
+									</a>
+								</div>
+							</div>
+						</div>
+						<form
+							class="modal-footer text-center notif_items d-flex justify-content-center"
+						>
+							<button
+								type="submit"
+								class="bg-none text-shubblue border-none w-100"
+								style="font-weight: bold"
+							>
+								Clear Notifications
+							</button>
+							<!-- try using gray for heading tags! -->
+						</form>
+					</div>
+				</div>
+			</div>
+			<div
+				class="offcanvas offcanvas-start"
+				data-bs-scroll="true"
+				tabindex="-1"
+				id="nav-offcanvas"
+				aria-labelledby="lorem"
+			>
+				<div class="offcanvas-header">
+					<a href="./" class="offcanvas-title" id="lorem">
+						<img
+							draggable="false"
+							src="./assets/shublogo-edited.png"
+							alt=""
+							class="shub-nav-logo"
+						/>
+					</a>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="offcanvas-body">
+					<form action="" method="post" class="mb-3">
+						<div class="search-container">
+							<input
+								type="text"
+								class="form-control search"
+								name=""
+								aria-describedby="Search courses"
+								placeholder="Search courses"
+							/>
+							<button
+								class="w-25 btn rounded-end bg-shub-blue search-btn"
+								type="submit"
+							>
+								<i class="bi-search has-text-dark"></i>
+							</button>
+						</div>
+					</form>
+					<ul class="list-unstyled items-mobile">
+						<li class="nav-item">
+							<!-- <a class="nav-link-mobile nav-link-mobile-active lorem" href="./todo.html" aria-current="page" >Study Portal <span class="visually-hidden">(current)</span></a > -->
+							<div class="accordion" id="study_portal">
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="item_1">
+										<button
+											class="accordion-button border-5 nav-link-mobile-active contact-form"
+											type="button"
+											data-bs-toggle="collapse"
+											data-bs-target="#item_1_collapse_id"
+											aria-expanded="true"
+											aria-controls="item_1_collapse_id"
+										>
+											Study Portal
+										</button>
+									</h2>
+									<a
+										href="todo.html"
+										id="item_1_collapse_id"
+										class="accordion-collapse bg-primary collapse show"
+										aria-labelledby="item_1"
+										data-bs-parent="#study_portal"
+									>
+										<div
+											class="accordion-body border-bottom nav-link-mobile"
+										>
+											<div class="w-100">todo</div>
+										</div>
+									</a>
+									<a
+										href="books.html"
+										id="item_1_collapse_id"
+										class="accordion-collapse collapse show"
+										aria-labelledby="item_1"
+										data-bs-parent="#study_portal"
+									>
+										<div
+											class="accordion-body border-bottom nav-link-mobile nav-link-mobile-active"
+										>
+											<div class="w-100">Books</div>
+										</div>
+									</a>
+									<a
+										id="item_1_collapse_id"
+										class="accordion-collapse collapse show"
+										aria-labelledby="item_1"
+										data-bs-parent="#study_portal"
+									>
+										<div
+											class="accordion-body nav-link-mobile border-bottom"
+										>
+											<div href="wikipedia.html">
+												Wikipedia
+											</div>
+										</div>
+									</a>
+									<a
+										href="dictionary.html"
+										id="item_1_collapse_id"
+										class="accordion-collapse collapse show"
+										aria-labelledby="item_1"
+										data-bs-parent="#study_portal"
+									>
+										<div
+											class="accordion-body nav-link-mobile"
+										>
+											<div>Dictionary</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</li>
+						<a class="nav-item" href="./home.html">
+							<div class="nav-link-mobile">Courses</div>
+						</a>
+						<a class="nav-item" href="./events.html">
+							<div class="nav-link-mobile">Events</div>
+						</a>
+						<a class="nav-item" href="./resources.html">
+							<div class="nav-link-mobile">Resources</div>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div
+				class="findcourses visually-hidden findcourses-cont text-center nav-item py-2"
+			>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					computer science
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					software engineering
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+				<a
+					href="#"
+					class="tag courses-tags my-1 bg-shub-purple-i text-light is-medium"
+				>
+					photography
+				</a>
+			</div>
+			<script>
+				const categories = document.querySelector(".more-toggle-cont");
+				const iteee = document.querySelector(".findcourses-cont");
+
+				categories.addEventListener("click", () => {
+					categories.classList.toggle("dropup");
+					iteee.classList.toggle("visually-hidden");
+				});
+			</script>
+		</header>
+		<div class="div ps-3">
+			<div class="priss border rounded-5 p-3">
+				<div class="tab-nav-items nav-link-mobile tab-nav-event">
+					<a href="./" class="bi-house-fill gen-svg home-for-js"></a>
+				</div>
+				<div class="tab-nav-items tab-nav-event nav-link-mobile">
+					<a href="./home.html">
+						<svg class="gen-svg" viewBox="0 0 24 24">
+							<path
+								fill="currentColor"
+								d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+							/>
+						</svg>
+					</a>
+				</div>
+				<!-- ! add todo to offcanvas -->
+				<div class="tab-nav-items tab-nav-event">
+					<div
+						class="bi-bell-fill gen-svg"
+						data-bs-toggle="modal"
+						data-bs-target="#notification_modal"
+					></div>
+				</div>
+				<div
+					class="tab-nav-items nav-link-mobile nav-link-mobile-active tab-nav-event"
+				>
+					<a href="./todo.html" class="">
+						<svg
+							class=""
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+						>
+							<path
+								d="M3 5v14c0 2.201 1.794 3 3 3h15v-2H6.012C5.55 19.988 5 19.806 5 19s.55-.988 1.012-1H21V4c0-1.103-.897-2-2-2H6c-1.206 0-3 .799-3 3z"
+							></path>
+						</svg>
+					</a>
+				</div>
+				<div class="tab-nav-items">
+					<span
+						class="bi-grid-3x3-gap-fill gen-svg toggle-tab"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					></span>
+				</div>
+				<!-- *for mobile notifications add a modal -->
+			</div>
+			<i class="bi-arrow-left-square-fill gen-svg close-and-show"></i>
+		</div>
+		<main class="">
+			<section class="container-md my-5 about-our-vision todo_container">
+				<h2 class="text-shubblue-i text-center">Dictionary</h2>
+				<p class="text-shubblue-i text-center">
+					Search and find definition of words
+				</p>
+				<form action="" class="mt-5">
+					<div
+						class="mb-3 d-flex justify-content-center study_portal_input container-xxl"
+					>
+						<input
+							type="text"
+							class="form-control search form-control-sm p-3"
+							name=""
+							id=""
+							aria-describedby="helpId"
+							placeholder="Dictionary Search..."
+						/>
+						<button
+							class="w-25 btn rounded-end bg-shub-blue search-btn"
+							type="submit"
+						>
+							<i class="bi-search has-text-dark"></i>
+						</button>
+					</div>
+				</form>
+			</section>
+			<div class="container-md wiki_portal_input my-4">
+				<div class="bg-light shadow-lg rounded-4">
+					<div class="p-4">
+						<h2 class="d-flex gap-3 align-items-center">
+							<i class="bi-volume-down volume"></i>
+							<b>Drop</b>
+						</h2>
+						<div class="text-muted mb-3">
+							<i>/drop/</i>
+						</div>
+						<div class="">
+							<i class="text-muted">
+								<b>Noun</b>
+							</i>
+							<ol>
+								<li class="my-2">
+									let or make (something) fall vertically.
+									"the fire was caused by someone dropping a
+									lighted cigarette"
+								</li>
+								<li class="my-2">
+									fall vertically. "the spoon dropped with a
+									clatter from her hand"
+								</li>
+							</ol>
+						</div>
+						<div class="">
+							<i class="text-muted">
+								<b>Verb</b>
+							</i>
+							<ol>
+								<li class="my-2">
+									a small round or pear-shaped portion of
+									liquid that hangs or falls or adheres to a
+									surface. "the first drops of rain splashed
+									on the ground"
+								</li>
+								<li class="my-2">
+									an instance of falling or dropping. "they
+									left within five minutes of the drop of the
+									curtain"
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--! remove position absolute from class syntax foot later  -->
+		</main>
+		<script>
+			AOS.init();
+		</script>
+		<script>
+			document
+				.querySelector(".notification-btn-close")
+				.addEventListener("click", () => {
+					document
+						.querySelector(".notifs")
+						.classList.remove("bi-bell-fill");
+				});
+			document.querySelector(".notifs").addEventListener("click", () => {
+				document.querySelector(".notifs").classList.add("bi-bell-fill");
+			});
+			document
+				.querySelector(".bi-volume-down")
+				.addEventListener("click", () => {
+					document
+						.querySelector(".bi-volume-down")
+						.classList.toggle("bi-volume-down-fill");
+				});
+		</script>
+	</body>
+</html>

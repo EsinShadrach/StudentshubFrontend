@@ -1,0 +1,416 @@
+<!-- check bottom for Nav offcanvas -->
+<!-- for tablets when you click profile it should pop out a modal -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>StudentsHub | Citadel of Learning</title>
+		<link rel="stylesheet" href="./css/bootstrap.css" />
+		<link
+			rel="stylesheet"
+			href="./assets/bootstrap-icons/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link
+			rel="shortcut icon"
+			href="./assets/favicon.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="./css/aos.css" />
+		<script defer src="./js/bootstrap.bundle.js"></script>
+		<script defer src="./js/functionality.js"></script>
+		<script src="./js/aos.js"></script>
+	</head>
+	<body class="">
+		<div class="identifier visually-hidden">home</div>
+		<!-- display this header if user is authenicated {for mobile but display regardless}-->
+		<!-- {% if user.is_authenticated %} -->
+		<header class="bg-light px-3 mobile-header py-2">
+			<a href=".">
+				<img
+					src="./assets/shublogo-edited.png"
+					draggable="false"
+					class="mobile-header-img"
+					alt=""
+				/>
+			</a>
+			<div class="mobile-profile dropdown">
+				<img
+					draggable="false"
+					src="./images/tobi.jpeg"
+					alt=""
+					class="img-fluid profile-img"
+					type="button"
+					id="account-actions"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+				/>
+				<div class="dropdown-menu" aria-labelledby="account-actions">
+					<a class="dropdown-item" href="#">View Profile</a>
+					<a class="dropdown-item" href="#">Edit Profile</a>
+				</div>
+			</div>
+		</header>
+		<!-- Not authenticated -->
+		<!-- {% else %} -->
+		<!-- <header class="bg-light text-center mobile-header tab-header-auth px-3 py-3">
+			<img src="./assets/shublogo-edited.png" draggable="false" class="mobile-header-img-no-auth" alt="">
+			<form class="d-flex">
+				<button class="btn btn-info my-2 my-sm-0" type="submit">
+					Login
+				</button>
+				<button class="btn btn-outline-info my-2 mx-2 my-sm-0" type="submit">
+					Sign-up
+				</button>
+			</form>
+		</header> -->
+		<!-- {% endif %} -->
+		<nav>
+			<div class="nav-mobile">
+				<div
+					class="nav-mobile-cont shadow-lg mb-3 px-3 py-1 rounded-4 text-center"
+				>
+					<div
+						class="nav-mobile-events"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					>
+						<i class="bi-grid-fill gen-svg-mobile"></i>
+					</div>
+					<a
+						href="."
+						class="nav-mobile-events nav-mobile-events-center border-start border-3 border-end"
+					>
+						<i class="bi-house-fill gen-svg-mobile mx-2"></i>
+					</a>
+					<a
+						href="./home.html"
+						class="nav-mobile-events mobile-need-fix"
+						aria-labelledby="name"
+					>
+						<svg
+							style="width: 24px; height: 24px"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill="currentColor"
+								d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+							/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</nav>
+		<header class="">
+			<nav
+				class="border desktop navbar navbar-expand-md navbar-light bg-light"
+				data-aos="fade-down"
+			>
+				<div class="container-lg py-2">
+					<a class="navbar-brand" href=".">
+						<img
+							draggable="false"
+							src="./assets/shublogo-edited.png"
+							alt=""
+							class="shub-nav-logo"
+						/>
+					</a>
+					<button
+						class="navbar-toggler d-lg-none"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					>
+						<span class="bi-text-right"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavId">
+						<ul class="navbar-nav me-auto mt-2 ms-5 mt-lg-0">
+							<li class="nav-item mx-3">
+								<a
+									class="nav-link lorem is-responsive"
+									href="."
+									aria-current="page"
+									>Home
+									<span class="visually-hidden"
+										>(current)</span
+									>
+								</a>
+							</li>
+							<li class="nav-item mx-3">
+								<a
+									class="nav-link is-responsive"
+									href="./home.html"
+									>Courses</a
+								>
+							</li>
+							<li class="nav-item mx-3">
+								<a
+									class="nav-link active is-responsive"
+									href="./contact.html"
+									>Contact</a
+								>
+							</li>
+							<li class="nav-item mx-3">
+								<a
+									class="nav-link is-responsive"
+									href="./about.html"
+									>About Us</a
+								>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="nav-link is-responsive" href="#"
+									>Download App</a
+								>
+							</li>
+						</ul>
+						<!-- {% if user.is_authenticated %} -->
+						<div class="dropdown">
+							<div
+								class="user-profile user-profile-lg p-2 rounded-5"
+								type="button"
+								id="account-actions"
+								data-bs-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								<img
+									draggable="false"
+									src="./images/tobi.jpeg"
+									alt=""
+									class="img-fluid profile-img"
+									data-bs-toggle="tooltip"
+									data-bs-placement="left"
+									data-bs-title="Tobi Edunkayo"
+								/>
+							</div>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="navigation"
+							>
+								<a class="dropdown-item" href="#"
+									>View Profile</a
+								>
+								<a class="dropdown-item" href="#"
+									>Edit Profile</a
+								>
+								<div class="dropdown-divider"></div>
+								<a
+									href="#"
+									class="d-flex justify-content-center gap-2 dropdown-item"
+								>
+									<i
+										class="bi-door-open-fill text-danger"
+									></i>
+									<div class="text-danger text-center">
+										Logout
+									</div>
+								</a>
+							</div>
+						</div>
+						<!-- else -->
+						<!-- <form class="d-flex my-2 my-lg-0">
+							<button class="is-responsive btn btn-info my-2 mx-2 my-sm-0" type="submit">Login</button>
+							<button class="is-responsive btn btn-outline-info my-2 mx-2 my-sm-0" type="submit">Sign-up</button>
+						</form> -->
+						<!-- endif -->
+					</div>
+				</div>
+			</nav>
+			<div
+				class="offcanvas offcanvas-start"
+				data-bs-scroll="true"
+				tabindex="-1"
+				id="nav-offcanvas"
+				aria-labelledby="lorem"
+			>
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="lorem">
+						<img
+							draggable="false"
+							src="./assets/shublogo-edited.png"
+							alt=""
+							class="shub-nav-logo"
+						/>
+					</h5>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="list-unstyled items-mobile">
+						<li class="nav-item">
+							<a
+								class="nav-link-mobile active-tab lorem"
+								href="./"
+								aria-current="page"
+								>Home
+								<span class="visually-hidden"
+									>(current)</span
+								></a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link-mobile" href="./home.html"
+								>Courses</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link-mobile nav-link-mobile-active"
+								href="./contact.html"
+								>Contact</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link-mobile" href="./about.html"
+								>About Us</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link-mobile" href="#">Download App</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="div ps-3">
+			<div class="priss border rounded-5 p-3">
+				<div class="tab-nav-items nav-link-mobile tab-nav-event">
+					<a href="./" class="bi-house-fill gen-svg home-for-js"></a>
+				</div>
+				<div class="tab-nav-items tab-nav-event">
+					<a href="./home.html">
+						<svg class="gen-svg" viewBox="0 0 24 24">
+							<path
+								fill="currentColor"
+								d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+							/>
+						</svg>
+					</a>
+				</div>
+				<div
+					class="tab-nav-items nav-link-mobile nav-link-mobile-active tab-nav-event"
+				>
+					<a
+						href="./contact.html"
+						class="bi-chat-left-dots-fill gen-svg"
+					></a>
+				</div>
+				<div class="tab-nav-items nav-link-mobile tab-nav-event">
+					<a
+						href="./about.html"
+						class="bi-info-square-fill gen-svg"
+					></a>
+				</div>
+				<div class="tab-nav-items tab-nav-event">
+					<a href="#" class="bi-download gen-svg"> </a>
+				</div>
+				<div class="tab-nav-items nav-link-mobile">
+					<span
+						class="bi-grid-3x3-gap-fill gen-svg toggle-tab"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					></span>
+				</div>
+			</div>
+			<i class="bi-arrow-left-square-fill gen-svg close-and-show"></i>
+		</div>
+		<main class="">
+			<section
+				class="bg-shub-blue about-our-vision p-4 text-light text-center"
+			>
+				<span class="d-flex contact mb-3">
+					<h2 class="text-center text-light">Contact Us</h2>
+					<i class="text-center bi-chat-left-dots-fill gen-svg"></i>
+				</span>
+				<div>Have an issue or want to drop a review?</div>
+				<div class="mt-5">Contact Us Now</div>
+			</section>
+			<section class="container-md py-5">
+				<form action="" class="contact-control">
+					<div class="form-floating contact-form-cont mb-3 w-75">
+						<input
+							type="text"
+							class="form-control contact-form text-shubpurple-i"
+							name="contact_name"
+							placeholder="Name: e.g John Doe"
+							required
+						/>
+						<label for="contact_name" class="text-muted"
+							>Name: e.g John Doe</label
+						>
+					</div>
+					<div class="form-floating contact-form-cont mb-3 w-75">
+						<input
+							type="email"
+							class="form-control contact-form text-shubpurple-i"
+							name="contact_mail"
+							placeholder="mail: e.g example@mail.com"
+							required
+						/>
+						<label for="contact_name" class="text-muted"
+							>mail: e.g example@mail.com</label
+						>
+					</div>
+					<div class="form-floating contact-form-cont mb-3 w-75">
+						<input
+							type="text"
+							class="form-control contact-form text-shubpurple-i"
+							name="contact_subject"
+							placeholder="Subject: "
+						/>
+						<label for="contact_name" class="text-muted"
+							>Subject:
+						</label>
+					</div>
+					<div class="form-floating contact-form-cont mb-3 w-75">
+						<textarea
+							type="text"
+							class="form-control contact-form text-shubpurple-i"
+							style="height: 15rem !important; resize: none"
+							name="contact_subject"
+							placeholder="message: "
+							required
+						></textarea>
+						<label for="contact_name" class="text-muted"
+							>write a message:
+						</label>
+					</div>
+					<button type="submit" class="w-50 btn btn-info">
+						Send!
+					</button>
+				</form>
+			</section>
+		</main>
+		<footer class="w-100 foot">
+			<div class="container-fluid p-4 footer">
+				<a href="#">
+					<h4 class="text-light">Company</h4>
+				</a>
+				<a href="./about.html">
+					<h4 class="text-light">About</h4>
+				</a>
+				<a href="./contact.html">
+					<h4 class="active text-light">Contact Us</h4>
+				</a>
+				<a href="./home.html" class="mb-5">
+					<h4 class="text-light">Courses</h4>
+				</a>
+			</div>
+		</footer>
+		<script>
+			AOS.init();
+		</script>
+	</body>
+</html>

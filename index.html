@@ -1,0 +1,1013 @@
+<!-- check bottom for Nav offcanvas -->
+<!-- for tablets when you click profile it should pop out a modal -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>StudentsHub | Citadel of Learning</title>
+		<link rel="stylesheet" href="./css/bootstrap.css" />
+		<link
+			rel="stylesheet"
+			href="./assets/bootstrap-icons/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link
+			rel="shortcut icon"
+			href="./assets/favicon.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="./css/aos.css" />
+		<script defer src="./js/bootstrap.bundle.js"></script>
+		<script defer src="./js/functionality.js"></script>
+		<script src="./js/aos.js"></script>
+	</head>
+	<body class="">
+		<div class="identifier visually-hidden">Home</div>
+		<!-- display this header if user is authenicated {for mobile but display regardless}-->
+		<!-- {% if user.is_authenticated %} -->
+		<header class="bg-light px-3 mobile-header py-2">
+			<a href="#">
+				<img
+					src="./assets/shublogo-edited.png"
+					draggable="false"
+					class="mobile-header-img"
+					alt=""
+				/>
+			</a>
+			<div class="mobile-profile dropdown">
+				<img
+					draggable="false"
+					src="./images/tobi.jpeg"
+					alt=""
+					class="img-fluid profile-img"
+					type="button"
+					id="account-actions"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+				/>
+				<div class="dropdown-menu" aria-labelledby="account-actions">
+					<a class="dropdown-item" href="#">View Profile</a>
+					<a class="dropdown-item" href="#">Edit Profile</a>
+				</div>
+			</div>
+		</header>
+		<!-- Not authenticated -->
+		<!-- {% else %} -->
+		<!-- <header class="bg-light text-center mobile-header tab-header-auth px-3 py-3">
+			<img src="./assets/shublogo-edited.png" draggable="false" class="mobile-header-img-no-auth" alt="">
+			<form class="d-flex">
+				<button class="btn btn-info my-2 my-sm-0" type="submit">
+					Login
+				</button>
+				<button class="btn btn-outline-info my-2 mx-2 my-sm-0" type="submit">
+					Sign-up
+				</button>
+			</form>
+		</header> -->
+		<!-- {% endif %} -->
+		<nav>
+			<div class="nav-mobile">
+				<div
+					class="nav-mobile-cont shadow-lg mb-3 px-3 py-1 rounded-4 text-center"
+				>
+					<div
+						class="nav-mobile-events"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					>
+						<i class="bi-grid-fill gen-svg-mobile"></i>
+					</div>
+					<a
+						href="./"
+						class="nav-mobile-events border-start border-3 border-end"
+					>
+						<i class="bi-house-fill gen-svg-mobile mx-2"></i>
+					</a>
+					<a
+						href="./home.html"
+						class="nav-mobile-events mobile-need-fix"
+					>
+						<svg
+							style="width: 24px; height: 24px"
+							viewBox="0 0 24 24"
+							aria-labelledby="courses"
+						>
+							<path
+								fill="currentColor"
+								d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+							/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</nav>
+		<header class="">
+			<nav
+				class="border desktop navbar navbar-expand-md navbar-light bg-light"
+				data-aos="fade-down"
+			>
+				<div class="container-lg py-2">
+					<a class="navbar-brand" href=".">
+						<img
+							draggable="false"
+							src="./assets/shublogo-edited.png"
+							alt=""
+							class="shub-nav-logo"
+						/>
+					</a>
+					<button
+						class="navbar-toggler d-lg-none"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					>
+						<span class="bi-text-right"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavId">
+						<ul class="navbar-nav me-auto mt-2 ms-5 mt-lg-0">
+							<li class="nav-item mx-3">
+								<a
+									class="nav-link active lorem is-responsive"
+									href="."
+									aria-current="page"
+									>Home
+									<span class="visually-hidden"
+										>(current)</span
+									>
+								</a>
+							</li>
+							<li class="nav-item mx-3">
+								<a
+									class="nav-link is-responsive"
+									href="./home.html"
+									>Courses</a
+								>
+							</li>
+							<li class="nav-item mx-3">
+								<a
+									class="nav-link is-responsive"
+									href="./contact.html"
+									>Contact</a
+								>
+							</li>
+							<li class="nav-item mx-3">
+								<a
+									class="nav-link is-responsive"
+									href="./about.html"
+									>About Us</a
+								>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="nav-link is-responsive" href="#"
+									>Download App</a
+								>
+							</li>
+						</ul>
+						<!-- {% if user.is_authenticated %} -->
+						<div class="dropdown">
+							<div
+								class="user-profile user-profile-lg p-2 rounded-5"
+								type="button"
+								id="account-actions"
+								data-bs-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								<img
+									draggable="false"
+									src="./images/tobi.jpeg"
+									alt=""
+									class="img-fluid profile-img"
+									data-bs-toggle="tooltip"
+									data-bs-placement="left"
+									data-bs-title="Tobi Edunkayo"
+								/>
+							</div>
+							<div
+								class="dropdown-menu"
+								aria-labelledby="navigation"
+							>
+								<a class="dropdown-item" href="#"
+									>View Profile</a
+								>
+								<a class="dropdown-item" href="#"
+									>Edit Profile</a
+								>
+								<div class="dropdown-divider"></div>
+								<a
+									href="#"
+									class="d-flex justify-content-center gap-2 dropdown-item"
+								>
+									<i
+										class="bi-door-open-fill text-danger"
+									></i>
+									<div class="text-danger text-center">
+										Logout
+									</div>
+								</a>
+							</div>
+						</div>
+						<!-- else -->
+						<!-- <form class="d-flex my-2 my-lg-0">
+							<button class="is-responsive btn btn-info my-2 mx-2 my-sm-0" type="submit">Login</button>
+							<button class="is-responsive btn btn-outline-info my-2 mx-2 my-sm-0" type="submit">Sign-up</button>
+						</form> -->
+						<!-- endif -->
+					</div>
+				</div>
+			</nav>
+			<div
+				class="offcanvas offcanvas-start"
+				data-bs-scroll="true"
+				tabindex="-1"
+				id="nav-offcanvas"
+				aria-labelledby="lorem"
+			>
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="lorem">
+						<img
+							draggable="false"
+							src="./assets/shublogo-edited.png"
+							alt=""
+							class="shub-nav-logo"
+						/>
+					</h5>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="list-unstyled items-mobile">
+						<li class="nav-item">
+							<a
+								class="nav-link-mobile active-tab lorem nav-link-mobile-active"
+								href="./"
+								aria-current="page"
+								>Home
+								<span class="visually-hidden"
+									>(current)</span
+								></a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link-mobile" href="./home.html"
+								>Courses</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link-mobile" href="./contact.html"
+								>Contact</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link-mobile" href="./about.html"
+								>About Us</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link-mobile" href="#">Download App</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="div ps-3">
+			<div class="priss border rounded-5 p-3">
+				<div
+					class="tab-nav-items nav-link-mobile nav-link-mobile-active tab-nav-event"
+				>
+					<a href="./" class="bi-house-fill gen-svg home-for-js"></a>
+				</div>
+				<div class="tab-nav-items tab-nav-event">
+					<a href="./home.html">
+						<svg class="gen-svg" viewBox="0 0 24 24">
+							<path
+								fill="currentColor"
+								d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+							/>
+						</svg>
+					</a>
+				</div>
+				<div class="tab-nav-items nav-link-mobile tab-nav-event">
+					<a
+						href="./contact.html"
+						class="bi-chat-left-dots-fill gen-svg"
+					></a>
+				</div>
+				<div class="tab-nav-items nav-link-mobile tab-nav-event">
+					<a
+						href="./about.html"
+						class="bi-info-square-fill gen-svg"
+					></a>
+				</div>
+				<div class="tab-nav-items tab-nav-event">
+					<a href="#" class="bi-download gen-svg"> </a>
+				</div>
+				<div class="tab-nav-items nav-link-mobile">
+					<span
+						class="bi-grid-3x3-gap-fill gen-svg toggle-tab"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#nav-offcanvas"
+						aria-controls="nav-offcanvas"
+					></span>
+				</div>
+			</div>
+			<i
+				class="bi-arrow-left-square-fill gen-svg close-and-show text-center"
+			></i>
+		</div>
+		<main class="">
+			<section class="gradient">
+				<div class="row w-100">
+					<div class="col-md-6">
+						<div class="card bg-none border-none">
+							<div class="card-body text-shubpurple p-5">
+								<h3>
+									Grow Your
+									<span class="text-shubblue">Skills</span>
+								</h3>
+								<h3 class="mb-3">Define Your Future</h3>
+								<p>
+									At StudentsHub our No.1 goal is to help
+									eradicate illitracy and also provide
+									standard education for everbody. Here at
+									StudentsHub, we want to help you achieve
+									your dreams and make you the best you can
+									be.
+								</p>
+								<div class="mt-5">
+									<a href="#" class="m-2 explore btn btn-info"
+										>Explore Course</a
+									>
+									<a
+										href="#"
+										class="m-2 explore text-shubpurple btn btn-outline-info"
+										>Join Us Now</a
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 p-5 -left">
+						<div class="row somestuff">
+							<div class="omo">
+								<div class="col-md-4">
+									<div class="card glass-morphism">
+										<div class="card-body">
+											<h3
+												class="card-title omo-card-title"
+											>
+												<svg
+													class="gen-svg omo-svg"
+													viewBox="0 0 24 24"
+												>
+													<path
+														fill="currentColor"
+														d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+													/>
+												</svg>
+											</h3>
+											<h6 class="card-text is-responsive">
+												100+ students learn daily
+											</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="card glass-morphism">
+										<div class="card-body">
+											<h3
+												class="card-title omo-card-title"
+											>
+												<svg
+													class="gen-svg omo-svg"
+													viewBox="0 0 24 24"
+												>
+													<path
+														fill="currentColor"
+														d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z"
+													/>
+												</svg>
+											</h3>
+											<h6 class="card-text is-responsive">
+												Rated Highly By Industry
+												Professionals
+											</h6>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div
+										class="card text-center glass-morphism"
+									>
+										<div class="card-body">
+											<h3
+												class="card-title omo-card-title"
+											>
+												<svg
+													class="gen-svg omo-svg"
+													viewBox="0 0 24 24"
+												>
+													<title>demo</title>
+													<path
+														fill="currentColor"
+														d="M19 2L14 6.5V17.5L19 13V2M6.5 5C4.55 5 2.45 5.4 1 6.5V21.16C1 21.41 1.25 21.66 1.5 21.66C1.6 21.66 1.65 21.59 1.75 21.59C3.1 20.94 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.81 22.25 21.56C22.35 21.61 22.4 21.59 22.5 21.59C22.75 21.59 23 21.34 23 21.09V6.5C22.4 6.05 21.75 5.75 21 5.5V19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V6.5C10.55 5.4 8.45 5 6.5 5Z"
+													/>
+												</svg>
+											</h3>
+											<h6
+												class="card-text is-responsive text-center"
+											>
+												Very Popular Among Students
+												Getting Into Tech In 2022
+											</h6>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="text-center mt-2 border-top border-bottom sect2">
+				<a
+					href="#"
+					class="row justify-content-center align-items-center g-2"
+				>
+					<div class="col-md-2 my-3 mx-4 col-sm-2 col-lg-2">
+						<img
+							draggable="false"
+							src="./assets/dlf.pt-coursera-logo-png-3007379.png"
+							alt=""
+							class="img-fluid thatthing"
+						/>
+					</div>
+					<div class="col-md-2 my-3 mx-4 col-sm-2 col-lg-2">
+						<img
+							draggable="false"
+							src="./assets/udemy-2-logo-png-transparent.png"
+							alt=""
+							class="img-fluid thatthing"
+						/>
+					</div>
+					<div class="col-md-2 my-3 mx-4 col-sm-2 col-lg-2">
+						<img
+							draggable="false"
+							src="./assets/FreeCodeCamp_logo.png"
+							alt=""
+							class="img-fluid thatthing"
+						/>
+					</div>
+					<div class="col-md-2 my-3 mx-4 col-sm-2 col-lg-2">
+						<img
+							draggable="false"
+							src="./assets/580b57fcd9996e24bc43c51f.png"
+							alt=""
+							class="img-fluid thatthing"
+						/>
+					</div>
+				</a>
+			</section>
+			<section class="courses mt-4 container-fluid">
+				<div class="courses-container">
+					<div class="card h-100 mb-3" style="max-width: 540px">
+						<div class="row g-0">
+							<a href="#" class="col-md-4">
+								<img
+									src="./assets/haskell2.png"
+									class="img-fluid h-100 courses-card-img rounded-start"
+									alt="course image"
+								/>
+							</a>
+							<div class="col-md-8">
+								<a href="#" class="">
+									<div class="card-body">
+										<h5 class="card-title text-shubblue">
+											Introduction to Haskel
+										</h5>
+										<div>
+											<small class="card-text text-muted"
+												>Created by Chad man Wafe</small
+											>
+										</div>
+										<p class="card-text">
+											In this course we'll be learning
+											functional programming with haskell
+										</p>
+										<p
+											class="card-text bottom-text-courses text-muted"
+										>
+											<small class=""
+												>Last updated:</small
+											>
+											<i class="bi-clock-history">
+												3 mins ago.</i
+											>
+										</p>
+										<span class="tag is-link my-1"
+											>Simping</span
+										>
+										<span class="tag is-link my-1"
+											>fraudulent acts</span
+										>
+										<span class="tag is-link my-1"
+											>taking L's</span
+										>
+									</div>
+								</a>
+								<div
+									class="card-footer course-footer text-light bg-shub-purple"
+								>
+									<div>Add to Favourite</div>
+									<div>
+										<i class="bi-heart"></i>
+										<!-- when clicked -->
+										<!-- <i class="bi-heart-fill"></i> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card h-100 mb-3" style="max-width: 540px">
+						<div class="row g-0">
+							<a href="#" class="col-md-4">
+								<img
+									src="./assets/c++.png"
+									class="img-fluid h-100 courses-card-img rounded-start"
+									alt="course image"
+								/>
+							</a>
+							<div class="col-md-8">
+								<a href="#">
+									<div class="card-body">
+										<h5 class="card-title">
+											Introduction to C++
+										</h5>
+										<p class="card-text">
+											In this course we'll be learning
+											functional programming with C++
+										</p>
+										<p
+											class="card-text bottom-text-courses text-muted"
+										>
+											<small class=""
+												>Last updated:</small
+											>
+											<i class="bi-clock-history">
+												3 mins ago.</i
+											>
+										</p>
+										<span class="tag is-link my-1"
+											>Static language</span
+										>
+										<span class="tag is-link my-1"
+											>Chad language</span
+										>
+										<span class="tag is-link my-1"
+											>Mid level languages</span
+										>
+									</div>
+								</a>
+								<div
+									class="card-footer course-footer text-light bg-shub-purple"
+								>
+									<div>Add to Favourite</div>
+									<div>
+										<i class="bi-heart"></i>
+										<!-- when clicked -->
+										<!-- <i class="bi-heart-fill"></i> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card h-100 mb-3" style="max-width: 540px">
+						<div class="row g-0">
+							<a href="#" class="col-md-4">
+								<img
+									src="./assets/Unofficial_JavaScript_logo_2.svg.png"
+									class="img-fluid h-100 courses-card-img rounded-start"
+									alt="course image"
+								/>
+							</a>
+							<div class="col-md-8">
+								<a href="#">
+									<div class="card-body">
+										<h5 class="card-title text-shubblue">
+											Introduction to Programming With
+											JavaScript
+										</h5>
+										<div>
+											<small class="card-text text-muted"
+												>Created by Nifemi Bakare</small
+											>
+										</div>
+										<p class="card-text">
+											This is a complete JavaScript course
+										</p>
+										<p
+											class="card-text bottom-text-courses text-muted"
+										>
+											<small class=""
+												>Last updated:</small
+											>
+											<i class="bi-clock-history">
+												3 mins ago.</i
+											>
+										</p>
+										<span class="tag is-link my-1"
+											>JavaScript</span
+										>
+										<span class="tag is-link my-1"
+											>Web Development</span
+										>
+										<span class="tag is-link my-1"
+											>Programming</span
+										>
+									</div>
+								</a>
+								<div
+									class="card-footer course-footer text-light bg-shub-purple"
+								>
+									<div>Add to Favourite</div>
+									<div>
+										<i class="bi-heart"></i>
+										<!-- when clicked -->
+										<!-- <i class="bi-heart-fill"></i> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card h-100 mb-3" style="max-width: 540px">
+						<div class="row g-0">
+							<a href="#" class="col-md-4">
+								<img
+									src="./assets/python-programming-language-stc3ieolyaqbclwv-stc3ieolyaqbclwv.jpg"
+									class="img-fluid h-100 courses-card-img rounded-start"
+									alt="course image"
+								/>
+							</a>
+							<div class="col-md-8">
+								<a href="#">
+									<div class="card-body">
+										<h5 class="card-title text-shubblue">
+											Introduction to Programming With
+											Python
+										</h5>
+										<div>
+											<small class="card-text text-muted"
+												>Created by Oluwatobi
+												Ekundayo</small
+											>
+										</div>
+										<p class="card-text">
+											In this course you'll learna about
+											Python..
+										</p>
+										<p
+											class="card-text bottom-text-courses text-muted"
+										>
+											<small class=""
+												>Last updated:</small
+											>
+											<i class="bi-clock-history">
+												3 mins ago.</i
+											>
+										</p>
+										<span class="tag is-link my-1"
+											>Python</span
+										>
+										<span class="tag is-link my-1"
+											>Chadness</span
+										>
+										<span class="tag is-link my-1"
+											>All rounder</span
+										>
+									</div>
+								</a>
+								<div
+									class="card-footer course-footer text-light bg-shub-purple"
+								>
+									<div>Add to Favourite</div>
+									<div>
+										<i class="bi-heart"></i>
+										<!-- when clicked -->
+										<!-- <i class="bi-heart-fill"></i> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card h-100 mb-3" style="max-width: 540px">
+						<div class="row g-0">
+							<a href="#" class="col-md-4">
+								<img
+									src="./assets/279143515_136882318917912_7302977828929394030_n.jpg"
+									class="img-fluid h-100 courses-card-img rounded-start"
+									alt="course image"
+								/>
+							</a>
+							<div class="col-md-8 h-100">
+								<a href="#">
+									<div class="card-body">
+										<h5 class="card-title text-shubblue">
+											Cyber Security Basics
+										</h5>
+										<div>
+											<small class="card-text text-muted"
+												>Created by Dennis
+												Sy-Apoe</small
+											>
+										</div>
+										<p class="card-text my-3">
+											Welcome to cyber security 101
+										</p>
+										<p
+											class="card-text bottom-text-courses text-muted"
+										>
+											<small class=""
+												>Last updated:</small
+											>
+											<i class="bi-clock-history">
+												3 mins ago.</i
+											>
+										</p>
+										<span class="tag is-link my-1"
+											>Cybergateman</span
+										>
+										<span class="tag is-link my-1"
+											>biro testing</span
+										>
+										<span class="tag is-link my-1"
+											>Software engineering</span
+										>
+									</div>
+								</a>
+								<div
+									class="card-footer course-footer text-light bg-shub-purple"
+								>
+									<div>Add to Favourite</div>
+									<div>
+										<i class="bi-heart"></i>
+										<!-- when clicked -->
+										<!-- <i class="bi-heart-fill"></i> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card h-100 mb-3" style="max-width: 540px">
+						<div class="row g-0">
+							<a href="#" class="col-md-4">
+								<img
+									src="./assets/016.png"
+									class="img-fluid h-100 courses-card-img rounded-start"
+									alt="course image"
+								/>
+							</a>
+							<div class="col-md-8">
+								<a href="#">
+									<div class="card-body">
+										<h5 class="card-title text-shubblue">
+											Avoiding the Simp catcher
+										</h5>
+										<div>
+											<small class="card-text text-muted"
+												>Created by Fejiro olokor
+											</small>
+										</div>
+										<p class="card-text my-3">
+											In this course you'll learn how to
+											perfectly..
+										</p>
+										<!-- truncatechars at 5 words-->
+										<p
+											class="card-text bottom-text-courses text-muted"
+										>
+											<small class=""
+												>Last updated:</small
+											>
+											<i class="bi-clock-history">
+												3 mins ago.</i
+											>
+										</p>
+										<span class="tag is-link my-1"
+											>Simping</span
+										>
+										<span class="tag is-link my-1"
+											>fraudulent acts</span
+										>
+										<span class="tag is-link my-1"
+											>taking L's</span
+										>
+									</div>
+								</a>
+								<div
+									class="card-footer course-footer text-light bg-shub-purple"
+								>
+									<div>Add to Favourite</div>
+									<div>
+										<i class="bi-heart"></i>
+										<!-- when clicked -->
+										<!-- <i class="bi-heart-fill"></i> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="container-fluid mt-5">
+				<div
+					class="card mb-3 border-0 shadow-lg"
+					style="background-color: #f3f3f3"
+				>
+					<div class="row g-0">
+						<div class="col-md-4 image-horizontal rounded">
+							<img
+								src="./assets/happy-person2.png"
+								class="img-fluid h-100 rounded-start"
+								alt="Card title"
+							/>
+						</div>
+						<div class="col-md-8">
+							<div class="card-body horz-card-body">
+								<h5 class="card-title">
+									Why <b class="text-shubpurple">Students</b
+									><span class="text-shubpurple">Hub</span>
+								</h5>
+								<!-- work on typography -->
+								<p class="card-text">
+									People use StudentsHub to learn every single
+									day and we've compiled reasons as to why
+									people like to learn from us
+								</p>
+								<p class="card-text bg-shub-purple"></p>
+								<div
+									class="row justify-content-center align-items-center g-2"
+								>
+									<div class="col-md-6 text-shubblue">
+										<div>
+											<i class="bi-caret-right-fill"
+												>Well Organized Course</i
+											>
+										</div>
+										<div>
+											<i class="bi-caret-right-fill"
+												>Free Courses</i
+											>
+										</div>
+									</div>
+									<div class="col-md-6 text-shubblue">
+										<div>
+											<i class="bi-caret-right-fill"
+												>Industry Professionals</i
+											>
+										</div>
+										<div>
+											<i class="bi-caret-right-fill"
+												>Quality Videos</i
+											>
+										</div>
+									</div>
+								</div>
+								<a href="#">
+									<button class="btn btn-info">
+										Explore Courses
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="my-5 reviews bg-light">
+				<div class="row container-md">
+					<h2 class="text-shubpurple text-center my-4">
+						What people say about us
+					</h2>
+					<div class="col-md-6 col-lg my-4">
+						<div class="card shadow-lg h-100 text-center">
+							<div class="review-img-cont">
+								<img
+									draggable="false"
+									src="./images/tobi.jpeg"
+									alt=""
+									class="img-fluid profile-img-reviews"
+								/>
+							</div>
+							<div class="card-body">
+								<blockquote class="blockquote mb-0">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur
+										adipisicing elit. Quibusdam voluptate
+										odit deleniti vitae vel, sapiente vero
+										suscipit labore at blanditiis harum
+										ullam quod quas ut minus quidem!
+										Aliquam, ducimus ea.
+									</p>
+									<footer class="blockquote-footer">
+										Username
+									</footer>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg my-4">
+						<div class="card shadow-lg h-100 text-center">
+							<div class="review-img-cont">
+								<img
+									draggable="false"
+									src="./images/tobi.jpeg"
+									alt=""
+									class="img-fluid profile-img-reviews"
+								/>
+							</div>
+							<div class="card-body">
+								<blockquote class="blockquote mb-0">
+									<!-- a review wouldn't normally have more than 20 word! -->
+									<p>
+										Lorem ipsum dolor, sit amet consectetur
+										adipisicing elit. Est, libero possimus?
+										Quod molestias adipisci dignissimos,
+										dolorem dicta neque nam quo labore, ipsa
+										debitis dolor natus, placeat omnis
+										aspernatur. Voluptatibus, dicta.
+									</p>
+									<footer class="blockquote-footer">
+										Username
+									</footer>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-md-auto col-lg my-4">
+						<!--add col-auto with JS to dynamically get the last item in a query set to make it look nicer do this too in home-->
+						<div class="card shadow-lg h-100 text-center">
+							<div class="review-img-cont">
+								<img
+									draggable="false"
+									src="./images/tobi.jpeg"
+									alt=""
+									class="img-fluid profile-img-reviews"
+								/>
+							</div>
+							<div class="card-body">
+								<blockquote class="blockquote mb-0">
+									<!-- a review wouldn't normally have more than 20 word! -->
+									<p>
+										Lorem ipsum dolor, sit amet consectetur
+										adipisicing elit. Molestias eum facere
+										ratione perferendis, doloribus labore
+										quisquam explicabo. Exercitationem
+										repellat asperiores tempore rem,
+										corporis expedita inventore, ipsum
+										veritatis, odio magnam cumque?
+									</p>
+									<footer class="blockquote-footer">
+										Username
+									</footer>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="reviews-btn">
+					<a href="#" type="button" class="text-dark btn btn-info"
+						>View more</a
+					>
+				</div>
+			</section>
+		</main>
+		<footer class="w-100 foot">
+			<div class="container-fluid p-4 footer">
+				<a href="#">
+					<h4 class="text-light">Company</h4>
+				</a>
+				<a href="./about.html">
+					<h4 class="text-light">About</h4>
+				</a>
+				<a href="./contact.html">
+					<h4 class="text-light">Contact Us</h4>
+				</a>
+				<a href="./home.html" class="mb-5">
+					<h4 class="text-light">Courses</h4>
+				</a>
+			</div>
+		</footer>
+		<script>
+			AOS.init();
+		</script>
+	</body>
+</html>
